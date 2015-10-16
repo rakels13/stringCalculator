@@ -3,14 +3,14 @@ package is.ru.stringcalculator;
 public class Calculator {
 
 	public static int add(String text){
-		/*if(text.equals("")){
+		if(text.equals("")){
 			return 0;
 		}
-		else if(text.contains(",")){
+		/*else if(text.contains(",")){
 			return sum(splitNumbers(text));
-		}
-		else*/
-			return 0;
+		}*/
+		else
+			return 1;
 	}
 
 	/*private static int toInt(String number){
