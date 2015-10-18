@@ -37,4 +37,13 @@ public class CalculatorTest {
     public void testDelimeterGiven(){
     	assertEquals(3, Calculator.add("//;\n1;2"));
     }
+    /*@Test
+    public void testNegativeNumbersException(){
+    	assertEquals("Negatives not allowed", Calculator.add("-1,2"));
+    
+    }*/
+    @Test
+        public void testIllegalNumBiggerThan1000(){
+                assertEquals(2, Calculator.add("1001,2"));
+    }
 }

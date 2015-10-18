@@ -2,22 +2,26 @@ package is.ru.stringcalculator;
 
 public class Calculator {
 
-	public static int add(String text){
+    public static int add(String text){
 		if(text.equals("")){
 			return 0;
 		}
+		/*if(text.contains("-")){
+				throw new ExceptionNegative();
+		}*/
 		if(text.startsWith("//")){
 			return sum(splitByGiven(text));
 		}
 		if(text.contains(",")){
 			return sum(splitNumbers(text));
 		}
+
 		else 
-			return 1;
+			return (toInt(text));
 	}
 
 	private static int toInt(String number){
-		return Integer.parseInt(number);
+			return Integer.parseInt(number);
 	}
 
 	private static String[] splitNumbers(String numbers){
@@ -34,9 +38,19 @@ public class Calculator {
     private static int sum(String[] numbers){
  	    int total = 0;
         for(String number : numbers){
-		    total += toInt(number);
+		    if (toInt(number) <= 1000){
+			    total += toInt(number);
+			}
 		}
 		return total;
     }
-
+    /*private class NumberExceptions extends Exception
+	{
+		public void ExceptionNegative()
+        {
+                String[] message; 
+                message[0] ="Negatives not Allowed";
+                return message;
+        }
+	}*/
 }
